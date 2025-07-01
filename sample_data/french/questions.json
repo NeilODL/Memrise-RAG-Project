@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "question": "How do you say 'hello' in French?"
+    },
+    {
+      "id": 2,
+      "question": "How do you ask 'How are you?' in French?"
+    },
+    {
+      "id": 3,
+      "question": "How do you say 'thank you' in French?"
+    },
+    {
+      "id": 4,
+      "question": "How do you ask 'Where is the bathroom?' in French?"
+    },
+    {
+      "id": 5,
+      "question": "How do you say 'I would like' in French?"
+    }
+  ]

@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "question": "How do you say 'hello' in French?",
+    "answer": "The word for 'hello' in French is \"Bonjour.\" This is provided in Context 2 from the greetings.txt file.",
+    "sources": [
+      "greetings.txt"
+    ],
+    "retrieval_scores": [
+      0.8886581063270569,
+      0.8750696778297424,
+      0.8740711808204651
+    ],
+    "language": "french"
+  },
+  {
+    "id": 2,
+    "question": "How do you ask 'How are you?' in French?",
+    "answer": "You can ask 'How are you?' in French by saying \"Comment ça va?\" for informal situations, or \"Comment allez-vous?\" for formal situations.",
+    "sources": [
+      "greetings.txt"
+    ],
+    "retrieval_scores": [
+      0.8883369565010071,
+      0.8665005564689636,
+      0.8608022332191467
+    ],
+    "language": "french"
+  },
+  {
+    "id": 3,
+    "question": "How do you say 'thank you' in French?",
+    "answer": "Merci - Thank you (from restaurant.txt)",
+    "sources": [
+      "greetings.txt",
+      "restaurant.txt"
+    ],
+    "retrieval_scores": [
+      0.841523289680481,
+      0.8353606462478638,
+      0.8340778946876526
+    ],
+    "language": "french"
+  },
+  {
+    "id": 4,
+    "question": "How do you ask 'Where is the bathroom?' in French?",
+    "answer": "Excusez-moi, où sont les toilettes? – Excuse me, where are the toilets?",
+    "sources": [
+      "restaurant.txt",
+      "travel.txt"
+    ],
+    "retrieval_scores": [
+      0.8873360753059387,
+      0.8460861444473267,
+      0.8456270098686218
+    ],
+    "language": "french"
+  },
+  {
+    "id": 5,
+    "question": "How do you say 'I would like' in French?",
+    "answer": "In French, 'I would like' is translated as 'Je voudrais'. This phrase is directly provided in the context from the vocabulary files.",
+    "sources": [
+      "accommodation.txt",
+      "restaurant.txt"
+    ],
+    "retrieval_scores": [
+      0.874519407749176,
+      0.864254891872406,
+      0.8618669509887695
+    ],
+    "language": "french"
+  }
+]
