@@ -1,0 +1,352 @@
+[
+  {
+    "source_file": "shopping.txt",
+    "chunk_index": 0,
+    "line_count": 3,
+    "start_line": 1,
+    "end_line": 3
+  },
+  {
+    "source_file": "shopping.txt",
+    "chunk_index": 1,
+    "line_count": 3,
+    "start_line": 4,
+    "end_line": 6
+  },
+  {
+    "source_file": "shopping.txt",
+    "chunk_index": 2,
+    "line_count": 3,
+    "start_line": 7,
+    "end_line": 9
+  },
+  {
+    "source_file": "shopping.txt",
+    "chunk_index": 3,
+    "line_count": 3,
+    "start_line": 10,
+    "end_line": 12
+  },
+  {
+    "source_file": "shopping.txt",
+    "chunk_index": 4,
+    "line_count": 3,
+    "start_line": 13,
+    "end_line": 15
+  },
+  {
+    "source_file": "restaurant.txt",
+    "chunk_index": 0,
+    "line_count": 3,
+    "start_line": 1,
+    "end_line": 3
+  },
+  {
+    "source_file": "restaurant.txt",
+    "chunk_index": 1,
+    "line_count": 3,
+    "start_line": 4,
+    "end_line": 6
+  },
+  {
+    "source_file": "restaurant.txt",
+    "chunk_index": 2,
+    "line_count": 3,
+    "start_line": 7,
+    "end_line": 9
+  },
+  {
+    "source_file": "restaurant.txt",
+    "chunk_index": 3,
+    "line_count": 3,
+    "start_line": 10,
+    "end_line": 12
+  },
+  {
+    "source_file": "restaurant.txt",
+    "chunk_index": 4,
+    "line_count": 3,
+    "start_line": 13,
+    "end_line": 15
+  },
+  {
+    "source_file": "weather.txt",
+    "chunk_index": 0,
+    "line_count": 3,
+    "start_line": 1,
+    "end_line": 3
+  },
+  {
+    "source_file": "weather.txt",
+    "chunk_index": 1,
+    "line_count": 3,
+    "start_line": 4,
+    "end_line": 6
+  },
+  {
+    "source_file": "weather.txt",
+    "chunk_index": 2,
+    "line_count": 3,
+    "start_line": 7,
+    "end_line": 9
+  },
+  {
+    "source_file": "weather.txt",
+    "chunk_index": 3,
+    "line_count": 3,
+    "start_line": 10,
+    "end_line": 12
+  },
+  {
+    "source_file": "weather.txt",
+    "chunk_index": 4,
+    "line_count": 3,
+    "start_line": 13,
+    "end_line": 15
+  },
+  {
+    "source_file": "greetings.txt",
+    "chunk_index": 0,
+    "line_count": 3,
+    "start_line": 1,
+    "end_line": 3
+  },
+  {
+    "source_file": "greetings.txt",
+    "chunk_index": 1,
+    "line_count": 3,
+    "start_line": 4,
+    "end_line": 6
+  },
+  {
+    "source_file": "greetings.txt",
+    "chunk_index": 2,
+    "line_count": 3,
+    "start_line": 7,
+    "end_line": 9
+  },
+  {
+    "source_file": "greetings.txt",
+    "chunk_index": 3,
+    "line_count": 3,
+    "start_line": 10,
+    "end_line": 12
+  },
+  {
+    "source_file": "greetings.txt",
+    "chunk_index": 4,
+    "line_count": 3,
+    "start_line": 13,
+    "end_line": 15
+  },
+  {
+    "source_file": "internet.txt",
+    "chunk_index": 0,
+    "line_count": 3,
+    "start_line": 1,
+    "end_line": 3
+  },
+  {
+    "source_file": "internet.txt",
+    "chunk_index": 1,
+    "line_count": 3,
+    "start_line": 4,
+    "end_line": 6
+  },
+  {
+    "source_file": "internet.txt",
+    "chunk_index": 2,
+    "line_count": 3,
+    "start_line": 7,
+    "end_line": 9
+  },
+  {
+    "source_file": "internet.txt",
+    "chunk_index": 3,
+    "line_count": 3,
+    "start_line": 10,
+    "end_line": 12
+  },
+  {
+    "source_file": "internet.txt",
+    "chunk_index": 4,
+    "line_count": 3,
+    "start_line": 13,
+    "end_line": 15
+  },
+  {
+    "source_file": "accomodation.txt",
+    "chunk_index": 0,
+    "line_count": 3,
+    "start_line": 1,
+    "end_line": 3
+  },
+  {
+    "source_file": "accomodation.txt",
+    "chunk_index": 1,
+    "line_count": 3,
+    "start_line": 4,
+    "end_line": 6
+  },
+  {
+    "source_file": "accomodation.txt",
+    "chunk_index": 2,
+    "line_count": 3,
+    "start_line": 7,
+    "end_line": 9
+  },
+  {
+    "source_file": "accomodation.txt",
+    "chunk_index": 3,
+    "line_count": 3,
+    "start_line": 10,
+    "end_line": 12
+  },
+  {
+    "source_file": "accomodation.txt",
+    "chunk_index": 4,
+    "line_count": 3,
+    "start_line": 13,
+    "end_line": 15
+  },
+  {
+    "source_file": "travel.txt",
+    "chunk_index": 0,
+    "line_count": 3,
+    "start_line": 1,
+    "end_line": 3
+  },
+  {
+    "source_file": "travel.txt",
+    "chunk_index": 1,
+    "line_count": 3,
+    "start_line": 4,
+    "end_line": 6
+  },
+  {
+    "source_file": "travel.txt",
+    "chunk_index": 2,
+    "line_count": 3,
+    "start_line": 7,
+    "end_line": 9
+  },
+  {
+    "source_file": "travel.txt",
+    "chunk_index": 3,
+    "line_count": 3,
+    "start_line": 10,
+    "end_line": 12
+  },
+  {
+    "source_file": "travel.txt",
+    "chunk_index": 4,
+    "line_count": 3,
+    "start_line": 13,
+    "end_line": 15
+  },
+  {
+    "source_file": "time.txt",
+    "chunk_index": 0,
+    "line_count": 3,
+    "start_line": 1,
+    "end_line": 3
+  },
+  {
+    "source_file": "time.txt",
+    "chunk_index": 1,
+    "line_count": 3,
+    "start_line": 4,
+    "end_line": 6
+  },
+  {
+    "source_file": "time.txt",
+    "chunk_index": 2,
+    "line_count": 3,
+    "start_line": 7,
+    "end_line": 9
+  },
+  {
+    "source_file": "time.txt",
+    "chunk_index": 3,
+    "line_count": 3,
+    "start_line": 10,
+    "end_line": 12
+  },
+  {
+    "source_file": "time.txt",
+    "chunk_index": 4,
+    "line_count": 3,
+    "start_line": 13,
+    "end_line": 15
+  },
+  {
+    "source_file": "health.txt",
+    "chunk_index": 0,
+    "line_count": 3,
+    "start_line": 1,
+    "end_line": 3
+  },
+  {
+    "source_file": "health.txt",
+    "chunk_index": 1,
+    "line_count": 3,
+    "start_line": 4,
+    "end_line": 6
+  },
+  {
+    "source_file": "health.txt",
+    "chunk_index": 2,
+    "line_count": 3,
+    "start_line": 7,
+    "end_line": 9
+  },
+  {
+    "source_file": "health.txt",
+    "chunk_index": 3,
+    "line_count": 3,
+    "start_line": 10,
+    "end_line": 12
+  },
+  {
+    "source_file": "health.txt",
+    "chunk_index": 4,
+    "line_count": 3,
+    "start_line": 13,
+    "end_line": 15
+  },
+  {
+    "source_file": "navigation.txt",
+    "chunk_index": 0,
+    "line_count": 3,
+    "start_line": 1,
+    "end_line": 3
+  },
+  {
+    "source_file": "navigation.txt",
+    "chunk_index": 1,
+    "line_count": 3,
+    "start_line": 4,
+    "end_line": 6
+  },
+  {
+    "source_file": "navigation.txt",
+    "chunk_index": 2,
+    "line_count": 3,
+    "start_line": 7,
+    "end_line": 9
+  },
+  {
+    "source_file": "navigation.txt",
+    "chunk_index": 3,
+    "line_count": 3,
+    "start_line": 10,
+    "end_line": 12
+  },
+  {
+    "source_file": "navigation.txt",
+    "chunk_index": 4,
+    "line_count": 3,
+    "start_line": 13,
+    "end_line": 15
+  }
+]
