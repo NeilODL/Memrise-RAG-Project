@@ -13,6 +13,9 @@ import typer
 import faiss
 from openai import OpenAI
 
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
 from config import Config
 
 # Set up logging
@@ -172,19 +175,25 @@ def save_metadata(chunks: List[Dict], metadata_path: Path):
 
 @app.command()
 def ingest(
-    data_path: str = typer.Argument(..., help="Path to directory containing .txt files"),
     chunk_size: int = typer.Option(Config.CHUNK_SIZE, help="Number of consecutive lines per chunk"),
     batch_size: int = typer.Option(100, help="Batch size for embedding generation"),
+    data_path: str = typer.Option(None, help="Custom path to directory containing .txt files (overrides config)"),
 ):
     """
     Ingest text files, generate embeddings, and build FAISS index.
+    Uses the language configured in Config.LANGUAGE.
     """
     try:
         # Validate configuration
         Config.validate()
         
-        # Convert path and validate
-        data_path = Path(data_path)
+        # Determine data path
+        if data_path:
+            data_path = Path(data_path)
+        else:
+            data_path = Config.DATA_DIR
+        
+        # Validate data path
         if not data_path.exists():
             typer.echo(f"Error: Data path {data_path} does not exist")
             raise typer.Exit(1)
@@ -193,7 +202,7 @@ def ingest(
             typer.echo(f"Error: {data_path} is not a directory")
             raise typer.Exit(1)
         
-        logger.info(f"Starting ingestion from {data_path}")
+        logger.info(f"Starting ingestion for {Config.LANGUAGE.title()} from {data_path}")
         
         # Initialize components
         processor = DocumentProcessor(chunk_size=chunk_size)
@@ -227,21 +236,42 @@ def ingest(
         index = index_builder.build_index(embeddings, Config.INDEX_TYPE)
         
         # Save outputs
-        index_path = Config.OUTPUT_DIR / Config.INDEX_FILE
-        metadata_path = Config.OUTPUT_DIR / Config.METADATA_FILE
+        index_builder.save_index(index, Config.INDEX_PATH)
+        save_metadata(all_chunks, Config.METADATA_PATH)
         
-        index_builder.save_index(index, index_path)
-        save_metadata(all_chunks, metadata_path)
-        
-        typer.echo(f"✅ Ingestion completed successfully!")
-        typer.echo(f"📁 Index saved to: {index_path}")
-        typer.echo(f"📄 Metadata saved to: {metadata_path}")
-        typer.echo(f"📊 Total chunks: {len(all_chunks)}")
-        typer.echo(f"📂 Files processed: {len(files_content)}")
+        typer.echo(f"SUCCESS: Ingestion completed successfully for {Config.LANGUAGE.title()}!")
+        typer.echo(f"Index saved to: {Config.INDEX_PATH}")
+        typer.echo(f"Metadata saved to: {Config.METADATA_PATH}")
+        typer.echo(f"Total chunks: {len(all_chunks)}")
+        typer.echo(f"Files processed: {len(files_content)}")
+        typer.echo(f"Language: {Config.LANGUAGE.title()}")
         
     except Exception as e:
         logger.error(f"Ingestion failed: {e}")
-        typer.echo(f"❌ Error: {e}")
+        typer.echo(f"ERROR: {e}")
+        raise typer.Exit(1)
+
+@app.command()
+def list_languages():
+    """List all available languages that can be ingested."""
+    try:
+        available_languages = Config.list_available_languages()
+        
+        if not available_languages:
+            typer.echo("No languages with data found.")
+            typer.echo(f"Expected data directory: {Config.BASE_DATA_DIR}")
+            return
+        
+        typer.echo("Available languages for ingestion:")
+        for language in available_languages:
+            data_dir = Config.PROJECT_ROOT / "sample_data" / language
+            txt_files = list(data_dir.glob("*.txt"))
+            typer.echo(f"  {language.title()} ({len(txt_files)} files)")
+        
+        typer.echo(f"\nTo ingest: Set Config.LANGUAGE and run 'poetry run python scripts/ingest.py ingest'")
+        
+    except Exception as e:
+        typer.echo(f"ERROR: {e}")
         raise typer.Exit(1)
 
 if __name__ == "__main__":

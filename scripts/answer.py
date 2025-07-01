@@ -13,6 +13,9 @@ import typer
 import faiss
 from openai import OpenAI
 
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
 from config import Config
 
 # Set up logging
@@ -101,21 +104,9 @@ class RAGAnswerer:
         
         context = "\n\n".join(context_parts)
         
-        prompt = f"""You are a helpful Spanish language learning assistant. Use the provided context to answer the user's question about Spanish phrases and vocabulary.
-
-Context from vocabulary files:
-{context}
-
-Question: {query}
-
-Instructions:
-1. Answer the question directly and accurately based on the provided context
-2. If the exact phrase is in the context, provide it
-3. If you need to infer or construct an answer, explain your reasoning
-4. Keep your answer focused and practical for language learning
-5. If the context doesn't contain relevant information, say so clearly
-
-Answer:"""
+        # Get prompt template from Config
+        prompt_template = Config.get_prompt_template()
+        prompt = prompt_template.format(context=context, query=query)
         
         return prompt
     
@@ -185,47 +176,62 @@ def load_chunk_texts(data_path: Path, metadata: List[Dict]) -> Dict[int, str]:
 
 @app.command()
 def answer(
-    questions_path: str = typer.Argument(..., help="Path to questions.json file"),
-    data_path: str = typer.Option("sample_data", help="Path to original data directory for chunk text lookup"),
-    output_path: str = typer.Option("answers.json", help="Path to save answers JSON file"),
+    questions_path: str = typer.Option(None, help="Path to questions.json file (overrides config)"),
+    data_path: str = typer.Option(None, help="Path to original data directory for chunk text lookup (overrides config)"),
+    output_path: str = typer.Option(None, help="Path to save answers JSON file"),
     top_k: int = typer.Option(3, help="Number of relevant chunks to retrieve"),
     model: str = typer.Option("gpt-3.5-turbo", help="OpenAI chat model to use")
 ):
     """
     Answer questions using the RAG system with FAISS index.
+    Uses the language configured in Config.LANGUAGE.
     """
     try:
         # Validate configuration
         Config.validate()
         
-        # Set up paths
-        questions_path = Path(questions_path)
-        data_path = Path(data_path)
-        output_path = Path(output_path)
-        index_path = Config.OUTPUT_DIR / Config.INDEX_FILE
-        metadata_path = Config.OUTPUT_DIR / Config.METADATA_FILE
+        # Determine paths
+        if questions_path:
+            questions_path = Path(questions_path)
+        else:
+            questions_path = Config.QUESTIONS_PATH
+        
+        if data_path:
+            data_path = Path(data_path)
+        else:
+            data_path = Config.DATA_DIR
+        
+        if output_path:
+            output_path = Path(output_path)
+        else:
+            # Save to answers directory relative to project root
+            answers_dir = Path(__file__).parent.parent / "answers"
+            answers_dir.mkdir(exist_ok=True)
+            output_path = answers_dir / f"answers_{Config.LANGUAGE}.json"
         
         # Validate inputs
         if not questions_path.exists():
             typer.echo(f"Error: Questions file {questions_path} does not exist")
             raise typer.Exit(1)
         
-        if not index_path.exists():
-            typer.echo(f"Error: Index file {index_path} does not exist. Run ingest.py first.")
+        if not Config.INDEX_PATH.exists():
+            typer.echo(f"Error: Index file {Config.INDEX_PATH} does not exist.")
+            typer.echo(f"Run: poetry run python scripts/ingest.py ingest")
             raise typer.Exit(1)
         
-        if not metadata_path.exists():
-            typer.echo(f"Error: Metadata file {metadata_path} does not exist. Run ingest.py first.")
+        if not Config.METADATA_PATH.exists():
+            typer.echo(f"Error: Metadata file {Config.METADATA_PATH} does not exist.")
+            typer.echo(f"Run: poetry run python scripts/ingest.py ingest")
             raise typer.Exit(1)
         
-        logger.info("Loading questions...")
+        logger.info(f"Loading {Config.LANGUAGE.title()} questions...")
         with open(questions_path, 'r', encoding='utf-8') as f:
             questions = json.load(f)
         
-        logger.info(f"Loaded {len(questions)} questions")
+        logger.info(f"Loaded {len(questions)} questions for {Config.LANGUAGE.title()}")
         
         # Initialize components
-        retriever = VectorRetriever(index_path, metadata_path)
+        retriever = VectorRetriever(Config.INDEX_PATH, Config.METADATA_PATH)
         answerer = RAGAnswerer(Config.OPENAI_API_KEY, model)
         
         # Load chunk texts for context
@@ -259,7 +265,8 @@ def answer(
                 "question": question,
                 "answer": answer_text,
                 "sources": sources,
-                "retrieval_scores": [chunk["score"] for chunk in relevant_chunks]
+                "retrieval_scores": [chunk["score"] for chunk in relevant_chunks],
+                "language": Config.LANGUAGE
             }
             
             results.append(result)
@@ -269,18 +276,43 @@ def answer(
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(results, f, indent=2, ensure_ascii=False)
         
-        typer.echo(f"✅ Answered {len(questions)} questions successfully!")
-        typer.echo(f"📁 Results saved to: {output_path}")
+        typer.echo(f"SUCCESS: Answered {len(questions)} {Config.LANGUAGE.title()} questions successfully!")
+        typer.echo(f"Results saved to: {output_path}")
+        typer.echo(f"Language: {Config.LANGUAGE.title()}")
         
         # Print summary
         for result in results:
-            typer.echo(f"\n📝 Q{result['id']}: {result['question']}")
-            typer.echo(f"💡 A: {result['answer']}")
-            typer.echo(f"📚 Sources: {', '.join(result['sources'])}")
+            typer.echo(f"\nQ{result['id']}: {result['question']}")
+            typer.echo(f"A: {result['answer']}")
+            typer.echo(f"Sources: {', '.join(result['sources'])}")
         
     except Exception as e:
         logger.error(f"Answer generation failed: {e}")
-        typer.echo(f"❌ Error: {e}")
+        typer.echo(f"ERROR: {e}")
+        raise typer.Exit(1)
+
+@app.command()
+def list_languages():
+    """List all available languages that can be used for answering questions."""
+    try:
+        available_languages = Config.list_available_languages()
+        
+        if not available_languages:
+            typer.echo("No languages with data found.")
+            typer.echo(f"Expected data directory: {Config.PROJECT_ROOT / 'sample_data'}")
+            return
+        
+        typer.echo("Available languages:")
+        for language in available_languages:
+            data_dir = Config.PROJECT_ROOT / "sample_data" / language
+            txt_files = list(data_dir.glob("*.txt"))
+            typer.echo(f"  {language.title()} ({len(txt_files)} files)")
+        
+        typer.echo(f"\nTo use: Set Config.LANGUAGE to one of the above and run 'poetry run python scripts/answer.py answer'")
+        typer.echo(f"Current language: {Config.LANGUAGE}")
+        
+    except Exception as e:
+        typer.echo(f"ERROR: {e}")
         raise typer.Exit(1)
 
 if __name__ == "__main__":

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "question": "How do you say hello in Italian?"
+  },
+  {
+    "id": 2,
+    "question": "How do you ask to see the menu in an Italian restaurant?"
+  },
+  {
+    "id": 3,
+    "question": "What's the Italian phrase for asking about prices when shopping?"
+  },
+  {
+    "id": 4,
+    "question": "How do you say you don't feel well in Italian?"
+  },
+  {
+    "id": 5,
+    "question": "How do you ask about WiFi availability in Italian?"
+  }
+]

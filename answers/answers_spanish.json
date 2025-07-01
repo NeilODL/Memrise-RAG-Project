@@ -2,7 +2,7 @@
   {
     "id": 1,
     "question": "How do you say 'I have a reservation' in Spanish?",
-    "answer": "The phrase \"tengo una reserva\" in Spanish means 'I have a reservation'. This phrase is directly provided in the context from the vocabulary files.",
+    "answer": "The phrase 'I have a reservation' in Spanish is \"tengo una reserva.\" This phrase is directly provided in the context from both the accommodation and travel files.",
     "sources": [
       "accomodation.txt",
       "travel.txt"
@@ -11,7 +11,8 @@
       0.8985869884490967,
       0.8896281123161316,
       0.8422867059707642
-    ]
+    ],
+    "language": "spanish"
   },
   {
     "id": 2,
@@ -22,10 +23,11 @@
       "restaurant.txt"
     ],
     "retrieval_scores": [
-      0.8525031208992004,
+      0.8524022698402405,
       0.8425934910774231,
-      0.836320161819458
-    ]
+      0.8363367319107056
+    ],
+    "language": "spanish"
   },
   {
     "id": 3,
@@ -36,24 +38,26 @@
       "weather.txt"
     ],
     "retrieval_scores": [
-      0.8829876184463501,
-      0.8203592896461487,
-      0.8152745962142944
-    ]
+      0.8829789161682129,
+      0.8203269243240356,
+      0.8152590990066528
+    ],
+    "language": "spanish"
   },
   {
     "id": 4,
     "question": "How do you ask 'Where is the bathroom?' in Spanish?",
-    "answer": "¿dónde está el baño? – where is the bathroom? (from travel.txt)",
+    "answer": "¿dónde está el baño? – where is the bathroom? \n\nThis phrase is directly provided in the context from the vocabulary files related to travel. It is a common and essential phrase to know when traveling in Spanish-speaking countries.",
     "sources": [
       "navigation.txt",
       "travel.txt"
     ],
     "retrieval_scores": [
-      0.8755565285682678,
-      0.832553505897522,
-      0.8233646750450134
-    ]
+      0.8755683898925781,
+      0.832493245601654,
+      0.8235142827033997
+    ],
+    "language": "spanish"
   },
   {
     "id": 5,
@@ -65,9 +69,10 @@
       "travel.txt"
     ],
     "retrieval_scores": [
-      0.8735882043838501,
-      0.8644931316375732,
-      0.8220561742782593
-    ]
+      0.8736819624900818,
+      0.8645516633987427,
+      0.8221668004989624
+    ],
+    "language": "spanish"
   }
 ]

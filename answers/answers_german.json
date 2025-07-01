@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "question": "How do you say 'Good morning' in German?",
+    "answer": "In German, you say 'Good morning' as \"Guten Morgen\". This phrase is provided in the context from the vocabulary files.",
+    "sources": [
+      "greetings.txt"
+    ],
+    "retrieval_scores": [
+      0.9102513790130615,
+      0.8736083507537842,
+      0.8509232997894287
+    ],
+    "language": "german"
+  },
+  {
+    "id": 2,
+    "question": "How do you ask 'How are you?' formally in German?",
+    "answer": "Wie geht es Ihnen? – How are you? (formal)",
+    "sources": [
+      "greetings.txt"
+    ],
+    "retrieval_scores": [
+      0.9009667038917542,
+      0.8793095350265503,
+      0.8702459335327148
+    ],
+    "language": "german"
+  },
+  {
+    "id": 3,
+    "question": "How do you say 'I would like to reserve a table' in German?",
+    "answer": "Eine Tischreservierung, bitte – A table reservation, please\n\nExplanation: The phrase \"Eine Tischreservierung, bitte\" from the context in the restaurant.txt file is the closest match to the requested phrase \"I would like to reserve a table\" in German. It conveys the same meaning effectively.",
+    "sources": [
+      "accommodation.txt",
+      "restaurant.txt",
+      "travel.txt"
+    ],
+    "retrieval_scores": [
+      0.8936034440994263,
+      0.8808436989784241,
+      0.8668875694274902
+    ],
+    "language": "german"
+  },
+  {
+    "id": 4,
+    "question": "How do you ask 'Could I have the bill please?' in German?",
+    "answer": "The phrase \"Könnte ich bitte die Rechnung haben?\" from the travel.txt context can be used to ask 'Could I have the bill please?' in German.",
+    "sources": [
+      "restaurant.txt",
+      "shopping.txt",
+      "travel.txt"
+    ],
+    "retrieval_scores": [
+      0.8765277862548828,
+      0.8622337579727173,
+      0.8538718223571777
+    ],
+    "language": "german"
+  },
+  {
+    "id": 5,
+    "question": "How do you say 'Excuse me, where is the train station?' in German?",
+    "answer": "Entschuldigung, wo ist der Bahnhof? – Excuse me, where is the train station? (This exact phrase is provided in the context from navigation.txt)",
+    "sources": [
+      "navigation.txt",
+      "travel.txt"
+    ],
+    "retrieval_scores": [
+      0.8971771001815796,
+      0.872559130191803,
+      0.8631640672683716
+    ],
+    "language": "german"
+  }
+]

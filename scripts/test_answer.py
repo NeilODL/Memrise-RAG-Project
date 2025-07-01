@@ -6,23 +6,23 @@ Tests happy-path scenarios and no-hit cases.
 TEST COVERAGE SUMMARY:
 ======================
 
-🔍 TestVectorRetriever (FAISS Vector Search):
-  ✅ test_init_success - Successful FAISS index and metadata loading
-  ✅ test_search_happy_path - Normal search returning relevant results (HAPPY PATH)
-  ✅ test_search_no_results - Search with no valid results (NO-HIT CASE)
-  ✅ test_search_invalid_indices - Search returning invalid FAISS indices (NO-HIT CASE)
+TestVectorRetriever (FAISS Vector Search):
+  - test_init_success - Successful FAISS index and metadata loading
+  - test_search_happy_path - Normal search returning relevant results (HAPPY PATH)
+  - test_search_no_results - Search with no valid results (NO-HIT CASE)
+  - test_search_invalid_indices - Search returning invalid FAISS indices (NO-HIT CASE)
 
-🤖 TestRAGAnswerer (OpenAI Integration):
-  ✅ test_init_success - Successful OpenAI client initialization
-  ✅ test_get_query_embedding_success - Successful embedding generation (HAPPY PATH)
-  ✅ test_create_context_prompt - Context prompt creation with retrieved chunks
-  ✅ test_generate_answer_success - Successful answer generation (HAPPY PATH)
-  ✅ test_generate_answer_error - API error handling (ERROR CASE)
-  ✅ test_extract_sources - Source file extraction from search results
+TestRAGAnswerer (OpenAI Integration):
+  - test_init_success - Successful OpenAI client initialization
+  - test_get_query_embedding_success - Successful embedding generation (HAPPY PATH)
+  - test_create_context_prompt - Context prompt creation with retrieved chunks
+  - test_generate_answer_success - Successful answer generation (HAPPY PATH)
+  - test_generate_answer_error - API error handling (ERROR CASE)
+  - test_extract_sources - Source file extraction from search results
 
-📂 TestLoadChunkTexts (File Processing):
-  ✅ test_load_chunk_texts_success - Successful chunk text loading (HAPPY PATH)
-  ✅ test_load_chunk_texts_missing_file - Missing source file handling (NO-HIT CASE)
+TestLoadChunkTexts (File Processing):
+  - test_load_chunk_texts_success - Successful chunk text loading (HAPPY PATH)
+  - test_load_chunk_texts_missing_file - Missing source file handling (NO-HIT CASE)
 
 Total: 12 tests covering initialization, happy paths, no-hit scenarios, and error handling
 """
@@ -35,9 +35,14 @@ from unittest.mock import Mock, patch, MagicMock
 import tempfile
 import os
 
+# Add parent directory to path for config import
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+from config import Config
+
 # Import the modules we want to test
 from answer import VectorRetriever, RAGAnswerer, load_chunk_texts
-from config import Config
 
 
 class TestVectorRetriever:
