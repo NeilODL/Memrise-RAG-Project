@@ -2,7 +2,7 @@
   {
     "id": 1,
     "question": "How do you say 'I have a reservation' in Spanish?",
-    "answer": "The phrase 'I have a reservation' in Spanish is \"tengo una reserva\". This phrase is directly provided in the context from both the accommodation and travel files.",
+    "answer": "The phrase \"tengo una reserva\" in Spanish means 'I have a reservation'. This phrase is directly provided in the context from the vocabulary files.",
     "sources": [
       "accomodation.txt",
       "travel.txt"
@@ -16,43 +16,43 @@
   {
     "id": 2,
     "question": "How do you ask 'Is breakfast included?' in Spanish?",
-    "answer": "¿está incluido el desayuno? – is breakfast included? \n\nThis phrase is directly provided in the context from the vocabulary files related to accommodation. It is the correct way to ask 'Is breakfast included?' in Spanish.",
+    "answer": "¿está incluido el desayuno? – is breakfast included?",
     "sources": [
       "accomodation.txt",
       "restaurant.txt"
     ],
     "retrieval_scores": [
-      0.8524717688560486,
-      0.8425024747848511,
-      0.8363040685653687
+      0.8525031208992004,
+      0.8425934910774231,
+      0.836320161819458
     ]
   },
   {
     "id": 3,
     "question": "How do you say 'The air conditioning doesn’t work' in Spanish?",
-    "answer": "The phrase \"no funciona el aire acondicionado\" in Spanish means 'The air conditioning doesn’t work'.",
+    "answer": "no funciona el aire acondicionado",
     "sources": [
       "accomodation.txt",
       "weather.txt"
     ],
     "retrieval_scores": [
-      0.8829789161682129,
-      0.8203150033950806,
-      0.8152616024017334
+      0.8829876184463501,
+      0.8203592896461487,
+      0.8152745962142944
     ]
   },
   {
     "id": 4,
     "question": "How do you ask 'Where is the bathroom?' in Spanish?",
-    "answer": "¿dónde está el baño? – where is the bathroom?",
+    "answer": "¿dónde está el baño? – where is the bathroom? (from travel.txt)",
     "sources": [
       "navigation.txt",
       "travel.txt"
     ],
     "retrieval_scores": [
-      0.8755368590354919,
-      0.8325676918029785,
-      0.8233424425125122
+      0.8755565285682678,
+      0.832553505897522,
+      0.8233646750450134
     ]
   },
   {
@@ -65,9 +65,9 @@
       "travel.txt"
     ],
     "retrieval_scores": [
-      0.8736819624900818,
-      0.8645516633987427,
-      0.8221668004989624
+      0.8735882043838501,
+      0.8644931316375732,
+      0.8220561742782593
     ]
   }
 ]
