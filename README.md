@@ -1,86 +1,57 @@
-# RAG Project
+# RAG Project - Spanish Language Learning Assistant
 
-A simple RAG (Retrieval-Augmented Generation) project for vocabulary generation.
+A Retrieval-Augmented Generation system that answers Spanish vocabulary questions using semantic search and LLM generation.
 
-## Prerequisites
+## Setup
 
-- Python 3.9 or higher
-- Poetry (Python dependency management tool)
-
-### Installing Poetry (if not already installed)
-
-```bash
-# On macOS/Linux/WSL
-curl -sSL https://install.python-poetry.org | python3 -
-
-# On Windows (PowerShell)
-(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
-
-# Alternative: Install via pip
-pip install poetry
-```
-
-## Setup Instructions
-
-1. **Clone or navigate to the project directory**
+1. **Install Poetry** (if not installed):
    ```bash
-   cd path/to/Memrise/RAG\ Project
+   curl -sSL https://install.python-poetry.org | python3 -
    ```
 
-2. **Install dependencies**
+2. **Install dependencies**:
    ```bash
+   cd "Memrise/RAG Project"
    poetry install
    ```
 
-3. **Activate the virtual environment**
-   
-   **Option A: Install Poetry shell plugin (recommended for regular use)**
+3. **Configure OpenAI API**:
    ```bash
-   # Install the shell plugin
-   poetry self add poetry-plugin-shell
-   
-   # Then activate the shell
-   poetry shell
+   cp .env.example .env
+   # Edit .env and add your OpenAI API key
    ```
-   
-   **Option B: Use the new env activate command**
-   ```bash
-   poetry env activate
-   ```
-   
-   **Option C: Run commands without activating (simplest)**
-   ```bash
-   # Just prefix your commands with 'poetry run'
-   poetry run python your_script.py
-   ```
-
-   *Note: Poetry 2.0.0+ doesn't include the shell command by default. Choose the option that works best for your workflow.*
-
-## Project Structure
-
-```
-RAG Project/
-├── sample_data/           # Sample vocabulary data files
-│   ├── greetings.txt     # Greeting phrases
-│   ├── restaurant.txt    # Restaurant-related vocabulary
-│   ├── travel.txt        # Travel-related vocabulary
-│   └── generation/       # Data generation utilities
-├── pyproject.toml        # Project dependencies and configuration
-└── README.md            # This file
-```
 
 ## Usage
 
-After setup, you can run the project using:
+1. **Build the search index**:
+   ```bash
+   poetry run python ingest.py sample_data
+   ```
 
-```bash
-# If you've activated the poetry shell
-python your_script.py
+2. **Answer questions**:
+   ```bash
+   poetry run python answer.py sample_data/questions.json
+   ```
 
-# Or without activating the shell
-poetry run python your_script.py
-```
+3. **Run tests**:
+   ```bash
+   poetry run python -m pytest test_answer.py -v
+   ```
 
-## Dependencies
+## Technology & Design Rationale
 
-- **tiktoken**: Token counting and text processing utilities 
+**Chunking Strategy**: Text is split into 3-line chunks to balance context preservation with retrieval precision. This size captures complete Spanish phrases with translations while avoiding overly long chunks that dilute semantic meaning.
+
+**Technology Selection**:
+- **FAISS**: Provides fast cosine similarity search over high-dimensional embeddings, essential for real-time vocabulary lookup
+- **OpenAI Embeddings**: text-embedding-ada-002 offers superior semantic understanding for multilingual content compared to alternatives
+- **GPT Models**: Generate natural, contextual answers rather than simple phrase lookups
+
+The RAG approach combines precise retrieval of relevant Spanish phrases with intelligent generation, ensuring answers are both accurate and pedagogically useful for language learners.
+
+## Files
+
+- `ingest.py` - Processes vocabulary files and builds FAISS index
+- `answer.py` - Handles question answering pipeline  
+- `test_answer.py` - Unit tests for happy-path and no-hit cases
+- `sample_data/` - Spanish vocabulary organized by topics 
