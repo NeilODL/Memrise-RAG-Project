@@ -8,7 +8,7 @@ import subprocess
 import sys
 import re
 from pathlib import Path
-import typer
+import typer # type: ignore
 
 # Add parent directory to path for config import
 sys.path.append(str(Path(__file__).parent.parent))

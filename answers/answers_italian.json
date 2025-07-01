@@ -7,65 +7,67 @@
       "greetings.txt"
     ],
     "retrieval_scores": [
-      0.8871421217918396,
-      0.8727521896362305,
-      0.8654229640960693
+      0.8879908919334412,
+      0.8725655674934387,
+      0.8655264377593994
     ],
     "language": "italian"
   },
   {
     "id": 2,
-    "question": "What's the formal way to ask someone how they are in Italian?",
-    "answer": "The formal way to ask someone how they are in Italian is \"Come sta?\" as provided in the context from greetings.txt.",
+    "question": "How do you ask to see the menu in an Italian restaurant?",
+    "answer": "You can ask to see the menu in an Italian restaurant by saying: \"Posso vedere il menu, per favore?\" which translates to \"Can I see the menu, please?\" This phrase is directly from the provided context in the vocabulary file related to restaurants.",
     "sources": [
-      "greetings.txt"
+      "restaurant.txt",
+      "travel.txt"
     ],
     "retrieval_scores": [
-      0.890937864780426,
-      0.8768134713172913,
-      0.8605064749717712
+      0.8873870372772217,
+      0.833882749080658,
+      0.8332216143608093
     ],
     "language": "italian"
   },
   {
     "id": 3,
-    "question": "How do you introduce yourself and say your name in Italian?",
-    "answer": "To introduce yourself and say your name in Italian, you can use the phrase \"Mi chiamo...\" which means \"My name is...\" as provided in the context from greetings.txt. This phrase is commonly used when introducing yourself in Italian.",
+    "question": "What's the Italian phrase for asking about prices when shopping?",
+    "answer": "The Italian phrase for asking about prices when shopping is \"Quanto costa questo?\" which translates to \"How much does this cost?\" This phrase is directly provided in the context from the vocabulary files.",
     "sources": [
-      "greetings.txt"
+      "shopping.txt"
     ],
     "retrieval_scores": [
-      0.8827352523803711,
-      0.8592344522476196,
-      0.852260947227478
+      0.8657213449478149,
+      0.862086296081543,
+      0.859448254108429
     ],
     "language": "italian"
   },
   {
     "id": 4,
-    "question": "What's the Italian phrase for 'nice to meet you' in a formal context?",
-    "answer": "Piacere di conoscerla – Nice to meet you (formal)",
+    "question": "How do you say you don't feel well in Italian?",
+    "answer": "Mi sento male - I feel sick. \n\nExplanation: The phrase \"Mi sento male\" directly translates to \"I feel sick\" in Italian, which accurately conveys the idea of not feeling well. This phrase is provided in the context from the vocabulary files related to health.",
     "sources": [
-      "greetings.txt"
+      "health.txt"
     ],
     "retrieval_scores": [
-      0.8953254818916321,
-      0.8764455318450928,
-      0.862221360206604
+      0.8665851950645447,
+      0.8403534889221191,
+      0.8360894322395325
     ],
     "language": "italian"
   },
   {
     "id": 5,
-    "question": "How do you say goodbye in Italian?",
-    "answer": "In Italian, you can say \"Arrivederci\" to say goodbye. This phrase is provided in the context from the vocabulary files.",
+    "question": "How do you ask about WiFi availability in Italian?",
+    "answer": "To ask about WiFi availability in Italian, you can say \"C'è il Wi-Fi gratuito?\" which translates to \"Is there free Wi-Fi?\" This phrase is commonly used to inquire about the availability of WiFi in a certain location.",
     "sources": [
-      "greetings.txt"
+      "accommodation.txt",
+      "internet.txt"
     ],
     "retrieval_scores": [
-      0.8771098256111145,
-      0.8572325110435486,
-      0.8546637296676636
+      0.8729290962219238,
+      0.8683521747589111,
+      0.8473212718963623
     ],
     "language": "italian"
   }

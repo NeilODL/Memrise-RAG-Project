@@ -2,76 +2,76 @@
   {
     "id": 1,
     "question": "How do you say 'I have a reservation' in Spanish?",
-    "answer": "The phrase 'I have a reservation' in Spanish is \"tengo una reserva.\" This phrase is directly provided in the context from both the accommodation and travel files.",
+    "answer": "The phrase \"tengo una reserva\" in Spanish means 'I have a reservation'. This phrase is directly provided in the context from the vocabulary files.",
     "sources": [
       "accomodation.txt",
       "travel.txt"
     ],
     "retrieval_scores": [
-      0.8985869884490967,
-      0.8896281123161316,
-      0.8422867059707642
+      0.8985763788223267,
+      0.889539897441864,
+      0.8421701192855835
     ],
     "language": "spanish"
   },
   {
     "id": 2,
     "question": "How do you ask 'Is breakfast included?' in Spanish?",
-    "answer": "¿está incluido el desayuno? – is breakfast included?",
+    "answer": "¿está incluido el desayuno? – is breakfast included? \n\nThis phrase is directly provided in the context from the vocabulary file related to accommodation. It is the correct way to ask if breakfast is included in Spanish.",
     "sources": [
       "accomodation.txt",
       "restaurant.txt"
     ],
     "retrieval_scores": [
-      0.8524022698402405,
-      0.8425934910774231,
-      0.8363367319107056
+      0.8523967266082764,
+      0.8425024747848511,
+      0.8363040685653687
     ],
     "language": "spanish"
   },
   {
     "id": 3,
     "question": "How do you say 'The air conditioning doesn’t work' in Spanish?",
-    "answer": "no funciona el aire acondicionado",
+    "answer": "The phrase \"no funciona el aire acondicionado\" in Spanish means 'The air conditioning doesn’t work'.",
     "sources": [
       "accomodation.txt",
       "weather.txt"
     ],
     "retrieval_scores": [
-      0.8829789161682129,
-      0.8203269243240356,
-      0.8152590990066528
+      0.8829876184463501,
+      0.8203710913658142,
+      0.8152745962142944
     ],
     "language": "spanish"
   },
   {
     "id": 4,
     "question": "How do you ask 'Where is the bathroom?' in Spanish?",
-    "answer": "¿dónde está el baño? – where is the bathroom? \n\nThis phrase is directly provided in the context from the vocabulary files related to travel. It is a common and essential phrase to know when traveling in Spanish-speaking countries.",
+    "answer": "¿dónde está el baño? – where is the bathroom?",
     "sources": [
       "navigation.txt",
       "travel.txt"
     ],
     "retrieval_scores": [
-      0.8755683898925781,
-      0.832493245601654,
-      0.8235142827033997
+      0.8754675388336182,
+      0.8326133489608765,
+      0.8233424425125122
     ],
     "language": "spanish"
   },
   {
     "id": 5,
     "question": "How do you say 'Can I pay by card?' in Spanish?",
-    "answer": "¿se puede pagar con tarjeta? – can I pay by card? \n\nThis phrase is directly provided in the context from both the shopping and restaurant vocabulary files. It is a common question when making payments in Spanish-speaking countries.",
+    "answer": "¿se puede pagar con tarjeta? – can I pay by card? \n\nThis phrase is directly provided in the context from both the shopping and restaurant vocabulary files. It is a common question when making purchases or paying bills in Spanish-speaking countries.",
     "sources": [
       "restaurant.txt",
       "shopping.txt",
       "travel.txt"
     ],
     "retrieval_scores": [
-      0.8736819624900818,
-      0.8645516633987427,
-      0.8221668004989624
+      0.873724639415741,
+      0.8645358085632324,
+      0.8221130967140198
     ],
     "language": "spanish"
   }

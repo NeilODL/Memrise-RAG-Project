@@ -8,8 +8,8 @@ import json
 import logging
 from pathlib import Path
 from typing import Dict, List
-import typer
-from openai import OpenAI
+import typer # type: ignore
+from openai import OpenAI # type: ignore
 
 import sys
 from pathlib import Path

@@ -8,10 +8,10 @@ import json
 import logging
 from pathlib import Path
 from typing import List, Dict
-import numpy as np
-import typer
-import faiss
-from openai import OpenAI
+import numpy as np # type: ignore
+import typer # type: ignore
+import faiss # type: ignore
+from openai import OpenAI # type: ignore
 
 import sys
 sys.path.append(str(Path(__file__).parent.parent))

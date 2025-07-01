@@ -6,7 +6,7 @@ Chat interface for asking language learning questions.
 
 import logging
 from pathlib import Path
-import typer
+import typer # type: ignore
 
 # Add parent directory to path for config import
 import sys

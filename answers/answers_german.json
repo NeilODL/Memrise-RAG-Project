@@ -2,60 +2,59 @@
   {
     "id": 1,
     "question": "How do you say 'Good morning' in German?",
-    "answer": "In German, you say 'Good morning' as \"Guten Morgen\". This phrase is provided in the context from the vocabulary files.",
+    "answer": "In German, you say 'Good morning' as \"Guten Morgen.\" This phrase is provided in the context from the vocabulary files.",
     "sources": [
       "greetings.txt"
     ],
     "retrieval_scores": [
-      0.9102513790130615,
-      0.8736083507537842,
-      0.8509232997894287
+      0.9104442000389099,
+      0.8736029863357544,
+      0.850998044013977
     ],
     "language": "german"
   },
   {
     "id": 2,
     "question": "How do you ask 'How are you?' formally in German?",
-    "answer": "Wie geht es Ihnen? – How are you? (formal)",
+    "answer": "The formal way to ask 'How are you?' in German is \"Wie geht es Ihnen?\" as provided in the context from greetings.txt.",
     "sources": [
       "greetings.txt"
     ],
     "retrieval_scores": [
-      0.9009667038917542,
-      0.8793095350265503,
-      0.8702459335327148
+      0.9009668231010437,
+      0.879288911819458,
+      0.8702086806297302
     ],
     "language": "german"
   },
   {
     "id": 3,
     "question": "How do you say 'I would like to reserve a table' in German?",
-    "answer": "Eine Tischreservierung, bitte – A table reservation, please\n\nExplanation: The phrase \"Eine Tischreservierung, bitte\" from the context in the restaurant.txt file is the closest match to the requested phrase \"I would like to reserve a table\" in German. It conveys the same meaning effectively.",
+    "answer": "Eine Tischreservierung für zwei Personen, bitte – A table reservation for two people, please\n\nExplanation: The phrase \"Eine Tischreservierung\" from the context in restaurant.txt directly translates to \"A table reservation\" in German. Adding \"für zwei Personen\" specifies the number of people for the reservation.",
     "sources": [
       "accommodation.txt",
       "restaurant.txt",
       "travel.txt"
     ],
     "retrieval_scores": [
-      0.8936034440994263,
-      0.8808436989784241,
-      0.8668875694274902
+      0.8936758637428284,
+      0.8808901309967041,
+      0.8670197129249573
     ],
     "language": "german"
   },
   {
     "id": 4,
     "question": "How do you ask 'Could I have the bill please?' in German?",
-    "answer": "The phrase \"Könnte ich bitte die Rechnung haben?\" from the travel.txt context can be used to ask 'Could I have the bill please?' in German.",
+    "answer": "The phrase \"Kann ich die Rechnung haben, bitte?\" from the restaurant.txt context can be used to ask 'Could I have the bill please?' in German.",
     "sources": [
       "restaurant.txt",
-      "shopping.txt",
       "travel.txt"
     ],
     "retrieval_scores": [
-      0.8765277862548828,
-      0.8622337579727173,
-      0.8538718223571777
+      0.8765295743942261,
+      0.8623014688491821,
+      0.853841245174408
     ],
     "language": "german"
   },
@@ -68,9 +67,9 @@
       "travel.txt"
     ],
     "retrieval_scores": [
-      0.8971771001815796,
-      0.872559130191803,
-      0.8631640672683716
+      0.8970960378646851,
+      0.8724137544631958,
+      0.8630281686782837
     ],
     "language": "german"
   }

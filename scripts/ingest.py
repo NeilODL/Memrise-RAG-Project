@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#
 """
 Ingestion script for RAG Project.
 Converts vocabulary files → chunks → embeddings → FAISS index for semantic search.
@@ -8,10 +8,10 @@ import json
 import logging
 from pathlib import Path
 from typing import List, Dict, Tuple
-import numpy as np
-import typer
-import faiss
-from openai import OpenAI
+import numpy as np # type: ignore
+import typer # type: ignore
+import faiss # type: ignore
+from openai import OpenAI # type: ignore
 
 import sys
 sys.path.append(str(Path(__file__).parent.parent))

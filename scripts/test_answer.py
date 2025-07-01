@@ -4,8 +4,8 @@ Unit tests for RAG answer system.
 Tests happy-path and no-hit scenarios.
 """
 
-import pytest
-import numpy as np
+import pytest # type: ignore
+import numpy as np # type: ignore
 from pathlib import Path
 from unittest.mock import Mock, patch, mock_open
 import sys

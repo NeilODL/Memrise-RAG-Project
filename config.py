@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv
+from dotenv import load_dotenv # type: ignore
 
 # Load environment variables
 load_dotenv()
@@ -14,7 +14,7 @@ class Config:
     """
     
     # Language setting - switches entire pipeline
-    LANGUAGE = "french"  # Change to "german", "french", etc.
+    LANGUAGE = "spanish"  # Change to "german", "french", etc.
     
     # OpenAI settings
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
