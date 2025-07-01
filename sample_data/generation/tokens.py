@@ -4,8 +4,8 @@ import tiktoken
 # Set up tokenizer
 enc = tiktoken.encoding_for_model("gpt-3.5-turbo")
 
-# Folder path
-folder_path = "sample_data"
+# Folder path (go up one directory to sample_data)
+folder_path = "../"
 
 # Token count dictionary
 token_counts = {}
